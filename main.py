@@ -66,7 +66,7 @@ class Auto:
 
   #  Metodos de instancia
   def cantidadAsientos(self) -> int:
-    return len([i for i in self.asientos if not(i is None)])
+    return len(list(filter(lambda x: not(x is None), self.asientos)))
 
   def verificarIntegridad(self) -> str:
     if (self.registro == self.motor.registro):
@@ -76,7 +76,7 @@ class Auto:
         else:
           if (i.registro != self.registro):
             return "Las piezas no son originales"
-      return "Auto Original"
+      return "Auto original"
     return "Las piezas no son originales"
   
   pass
