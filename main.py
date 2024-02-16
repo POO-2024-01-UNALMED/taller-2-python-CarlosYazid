@@ -14,7 +14,7 @@ class Asiento:
     self.registro = registro
 
   #  Metodos de instancia
-  def cambiaColor(self, color: str) -> None:
+  def cambiarColor(self, color: str) -> None:
     match color:
       case "amarillo":
         self.color = "amarillo"
@@ -66,7 +66,7 @@ class Auto:
 
   #  Metodos de instancia
   def cantidadAsientos(self) -> int:
-    return len(self.asientos)
+    return len([i for i in self.asientos if not(i is None)])
 
   def verificarIntegridad(self) -> str:
     if (self.registro == self.motor.registro):
